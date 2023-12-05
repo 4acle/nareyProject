@@ -1,0 +1,8 @@
+#!/bin/bash
+g++ -o publish publish.cpp analogIn.cpp -lpaho-mqtt3c
+g++ -o subscribeTemp subscribeTemp.cpp analogIn.cpp makeLEDs.cpp -lpaho-mqtt3c
+g++ -o subscribeBlink subscribeBlink.cpp makeLEDs.cpp -lpaho-mqtt3c
+config-pin p8.16 gpio_pu
+g++ -o pushbuttonControl pushbuttonControl.cpp GPIO.cpp -lpaho-mqtt3c -pthread
+config-pin p9.12 gpio
+g++ -o applianceControl applianceControl.cpp GPIO.cpp -lpaho-mqtt3c -pthread
