@@ -6,7 +6,6 @@
 #include "analogIn.h"
 using namespace std;
 
-//Please replace the username, feed and token with your values
 #define ADDRESS    "tcp://io.adafruit.com"
 #define CLIENTID   "Beagle1"
 #define TOPIC      "cjnarey/feeds/project.temperature"
@@ -35,7 +34,7 @@ int readAnalog(int number){
 }
 
 int main(int argc, char* argv[]) {
-   char str_payload[100];          // Set your max message size here
+   char str_payload[100];
    MQTTClient client;
    cout << "Starting Beagle board MQTT Adafruit Publish" << endl;
    MQTTClient_connectOptions opts = MQTTClient_connectOptions_initializer;
